@@ -23,6 +23,8 @@ def download_from_gdrive(gfile_url, file_name, out_dir=".", unzip=True, verbose=
         print("Google Drive file id: {}".format(file_id))
 
     dest_path = os.path.join(out_dir, file_name)
+    print("destination path")
+    print(dest_path)
     map_file = Path(dest_path)
     
     gdd.download_file_from_google_drive(file_id, dest_path, True, unzip)

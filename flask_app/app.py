@@ -64,6 +64,7 @@ def index():
     
     #have to set map path - used by template
     map_path = os.path.join(app.root_path, 'static/' + map_name)
+    
     print(map_path)
     app.vars['map_path'] = map_path
     print(app.vars['map_path'])
@@ -88,7 +89,7 @@ def get_map():
   print (args) # For debugging
   map_name = args['map']
   print(type(map_name))
-  map_path = os.path.join(app.root_path, 'static/' + map_name)
+  map_path = os.path.join(app.root_path, 'static1/' + map_name)
   print(map_path)
   app.vars['map_path'] = map_path
   app.vars['Title_line1'] = map_dict[map_name][0]

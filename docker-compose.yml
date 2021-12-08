@@ -6,6 +6,8 @@ services:
     container_name: load_maps
     restart: always
     build: ./load_maps
+    volumes: 
+      - static:/app/static
     command: python get_maps.py
     
 
@@ -13,11 +15,15 @@ services:
     container_name: flask_app
     restart: always
     build: ./flask_app
+    
     ports:
       - "8000:8000"
+    volumes:
+      - static:/usr/src/flask_app/static
     command: gunicorn -w 1 -b 0.0.0.0:8000 wsgi:app
     depends_on:
       - maps
+
 
   nginx:
     container_name: nginx
@@ -27,3 +33,7 @@ services:
       - "80:80"
     depends_on:
       - flask_app
+
+volumes:
+  static:
+  

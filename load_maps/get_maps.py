@@ -21,6 +21,7 @@ def download_maps(dict, dir):
     file_name = key + ".zip"
     url = dict[key][2] 
     print(url)
+    print(dir)
     download_from_gdrive(url,file_name,dir)
 
   pass  
@@ -29,5 +30,7 @@ def download_maps(dict, dir):
 
 if __name__ == '__main__':
 
-  
-  download_maps(map_dict, "./static") 
+  print(os.getcwd())
+  static_path = os.path.join(os.getcwd(), 'static/')
+    
+  download_maps(map_dict, static_path) 
