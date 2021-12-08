@@ -1,6 +1,14 @@
 version: '3'
 
 services:
+
+  maps:
+    container_name: load_maps
+    restart: always
+    build: ./load_maps
+    command: python get_maps.py
+    
+
   flask_app:
     container_name: flask_app
     restart: always
@@ -8,6 +16,8 @@ services:
     ports:
       - "8000:8000"
     command: gunicorn -w 1 -b 0.0.0.0:8000 wsgi:app
+    depends_on:
+      - maps
 
   nginx:
     container_name: nginx
