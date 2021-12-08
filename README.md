@@ -1,14 +1,4 @@
-# Template for deploying ML models using Flask + Gunicorn + Nginx inside Docker
 
-## Running the solution
-
-In order to run this solution, you just have to install Docker, Docker compose, then clone this repository, and then:
-```
-bash run_docker.sh
-```
-
-# flask_gunicorn_nginx_docker
-Template for deploying ML models using Flask + Gunicorn + Nginx inside Docker
 
 ### This was adapted from :
 https://towardsdatascience.com/how-to-deploy-ml-models-using-flask-gunicorn-nginx-docker-9b32055b3d0
@@ -28,7 +18,22 @@ sudo bash run_docker.sh
 ```
 
 
+**************************************************
 
+
+****************************************************
+
+# Template for deploying ML models using Flask + Gunicorn + Nginx inside Docker
+
+## Running the solution
+
+In order to run this solution, you just have to install Docker, Docker compose, then clone this repository, and then:
+```
+bash run_docker.sh
+```
+
+# flask_gunicorn_nginx_docker
+Template for deploying ML models using Flask + Gunicorn + Nginx inside Docker
 
 
 For Docker installation instructions follow:
