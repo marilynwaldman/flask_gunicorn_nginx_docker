@@ -117,6 +117,20 @@ def show_map():
   pass
 
 
+@app.route('/get_logo')
+def get_logo():
+  logo_path = os.path.join(app.root_path, 'static/img/logo.png' )
+  print("show logo")
+  print(logo_path)
+  logo_file = Path(logo_path)
+  if logo_file.exists():
+    return send_file(logo_path)
+  else:
+    return render_template('error.html', culprit='logo file', details="the logo file couldn't be loaded")
+
+  pass
+
+
 @app.route('/error.html')
 def error():
   details = "There was some kind of error."
@@ -132,13 +146,3 @@ def geoerror():
   details = "Map not found."
   return render_template('error.html', culprit='the Map', details=details)
 
-
-  
-
-#if __name__ == '__main__':
-
-  
-  #download_maps(map_dict, "./static")           
-#  app.debug = True
-  
-#  app.run(host='0.0.0.0')
