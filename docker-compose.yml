@@ -16,6 +16,8 @@ services:
     container_name: flask_app
     restart: always
     build: ./flask_app
+    volumes: 
+      - ./flask_app:/app
     
     ports:
       - "8000:8000"

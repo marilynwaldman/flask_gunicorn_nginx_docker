@@ -2,6 +2,7 @@
 
 from pathlib import Path
 from utils import download_from_gdrive
+import time
 
 map_dict = {  'CenCal.html' : ['California Water Districts and Pits',
                                 'Top 3 producers',
@@ -31,3 +32,5 @@ if __name__ == '__main__':
 
   
   download_maps(map_dict, "static") 
+
+  

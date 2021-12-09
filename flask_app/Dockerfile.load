@@ -11,7 +11,7 @@ FROM python:3.9
 #--mount source=nginx-config,target=/etc/nginx \
 #docker volume create --name static_maps
 #docker run -t -i -v static_maps:/app/static load_maps /bin/bash
-#docker run -t -i -v static:/app/static load_maps /bin/bash
+#docker run -t -i -v ./static:/app/static load_maps /bin/bash
 #docker volume inspect [OPTIONS] VOLUME [VOLUME...]
 #docker volume inspect static_maps
 
@@ -23,4 +23,4 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 # define the port number the container should expose
 
-CMD [ "python", "get_maps.py"]
+#CMD [ "python", "get_maps.py"]
