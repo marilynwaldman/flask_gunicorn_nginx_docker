@@ -5,9 +5,11 @@ services:
   maps:
     container_name: load_maps
     restart: always
-    build: ./load_maps
+    build: 
+      context : ./flask_app
+      dockerfile : Dockerfile.load
     volumes: 
-      - static:/app/static
+      - ./flask_app:/app
     command: python get_maps.py
     
 
@@ -18,8 +20,6 @@ services:
     
     ports:
       - "8000:8000"
-    volumes:
-      - static:/usr/src/flask_app/static
     command: gunicorn -w 1 -b 0.0.0.0:8000 wsgi:app
     depends_on:
       - maps
@@ -34,6 +34,5 @@ services:
     depends_on:
       - flask_app
 
-volumes:
-  static:
+
   
