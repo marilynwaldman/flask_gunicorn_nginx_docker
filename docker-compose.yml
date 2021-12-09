@@ -4,7 +4,6 @@ services:
 
   maps:
     container_name: load_maps
-    restart: always
     build: 
       context : ./flask_app
       dockerfile : Dockerfile.load
