@@ -25,5 +25,5 @@ def download_from_gdrive(gfile_url, file_name, out_dir=".", unzip=True, verbose=
     dest_path = os.path.join(out_dir, file_name)
     map_file = Path(dest_path)
     
-    gdd.download_file_from_google_drive(file_id, dest_path, True, unzip)
+    gdd.download_file_from_google_drive(file_id, dest_path, verbose=True, unzip=True)
 

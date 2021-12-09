@@ -7,3 +7,4 @@ flask
 jinja2
 werkzeug
 googledrivedownloader==0.4
+unzip
